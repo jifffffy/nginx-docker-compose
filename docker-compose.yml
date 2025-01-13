@@ -1,0 +1,13 @@
+services:
+  nginx:
+    container_name: nginx_compose
+    restart: always
+    image: nginx:latest
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates:ro
+      - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - 443:443
+    environment:
+      - AUDIOBOOKSHELF_HOSTNAME=${AUDIOBOOKSHELF_HOSTNAME}
+      - HOST_IP=${HOST_IP}
