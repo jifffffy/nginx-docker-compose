@@ -4,8 +4,8 @@ server {
     http2 on;
     server_name ${AUDIOBOOKSHELF_HOSTNAME};
 
-    ssl_certificate /etc/letsencrypt/live/jiffy.press/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/jiffy.press/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/audiobookshelf.jiffy.press/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/audiobookshelf.jiffy.press/privkey.pem;
 
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_prefer_server_ciphers on;
