@@ -23,7 +23,7 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
 
-        proxy_pass http://${HOST_IP}:13378/;
+        proxy_pass http://${HOST_IP}:8444/;
         proxy_redirect http:// https://;
 
         proxy_buffering off;
