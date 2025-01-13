@@ -64,7 +64,8 @@ server {
 
     location / {
 
-        proxy_pass http://${HOST_IP}:8443/;
+        # proxy_pass http://${HOST_IP}:8443/;
+        proxy_pass http://${HOST_IP}:8080/guacamole/;
         proxy_redirect http:// https://;
 
         proxy_buffering off;
