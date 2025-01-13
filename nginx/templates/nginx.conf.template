@@ -2,7 +2,7 @@
 server {
     listen 443 ssl;
     http2 on;
-    server_name ${AUDIOBOOKSHELF_HOSTNAM};
+    server_name ${AUDIOBOOKSHELF_HOSTNAME};
 
     ssl_certificate /etc/letsencrypt/live/audiobookshelf.jiffy.press/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/audiobookshelf.jiffy.press/privkey.pem;
