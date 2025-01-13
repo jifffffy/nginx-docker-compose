@@ -2,10 +2,7 @@
 server {
     listen 443 ssl;
     http2 on;
-    server_name $ {
-        AUDIOBOOKSHELF_HOSTNAM
-    }
-    ;
+    server_name ${AUDIOBOOKSHELF_HOSTNAM};
 
     ssl_certificate /etc/letsencrypt/live/audiobookshelf.jiffy.press/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/audiobookshelf.jiffy.press/privkey.pem;
@@ -26,10 +23,7 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
 
-        proxy_pass http://$ {
-            HOST_I
-        }
-        :8444/;
+        proxy_pass http://${HOST_IP}:8444/;
         proxy_redirect http:// https://;
 
         proxy_buffering off;
@@ -54,10 +48,7 @@ server {
 server {
     listen 443 ssl;
     http2 on;
-    server_name $ {
-        GUACAMOLE_HOSTNAM
-    }
-    ;
+    server_name ${GUACAMOLE_HOSTNAM};
 
     ssl_certificate /etc/letsencrypt/live/guacamole.jiffy.press/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/guacamole.jiffy.press/privkey.pem;
@@ -73,10 +64,7 @@ server {
 
     location / {
 
-        proxy_pass http://$ {
-            HOST_
-        }
-        :8443/;
+        proxy_pass http://${HOST_IP}:8443/;
         proxy_redirect http:// https://;
 
         proxy_buffering off;
