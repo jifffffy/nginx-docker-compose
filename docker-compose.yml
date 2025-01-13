@@ -5,6 +5,7 @@ services:
     image: nginx:latest
     volumes:
       - ./nginx/templates:/etc/nginx/templates:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - /etc/letsencrypt:/etc/letsencrypt
     ports:
       - 443:443
