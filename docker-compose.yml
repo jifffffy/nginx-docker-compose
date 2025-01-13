@@ -6,6 +6,7 @@ services:
     volumes:
       - ./nginx/templates:/etc/nginx/templates:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/logs:/var/log/nginx
       - /etc/letsencrypt:/etc/letsencrypt
     ports:
       - 443:443
